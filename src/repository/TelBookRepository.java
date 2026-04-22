@@ -103,4 +103,19 @@ public class TelBookRepository {
         }
         return list;
     }
+
+    public int deleteById(int id) {
+        PreparedStatement psmt = null;
+        int result = 0;
+        try {
+            String sql = "DELETE FROM telbook WHERE id = ?";
+            psmt = conn.prepareStatement(sql);
+            psmt.setLong(1, id);
+            result = psmt.executeUpdate();
+            psmt.close();
+        } catch (Exception e) {
+            System.out.println("Delete All Error : " + e.getMessage());
+        }
+        return result;
+    }
 }
