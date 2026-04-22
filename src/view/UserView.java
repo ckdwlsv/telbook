@@ -1,9 +1,12 @@
 package view;
 
+import dto.TelDto;
 import exception.InputValidation;
 import exception.MyException;
 import service.TelBookService;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserView {
@@ -71,7 +74,20 @@ public class UserView {
     }
 
     public void searchAll() {
-        System.out.println("==전화 번호 등록==");
+        List<TelDto> list = new ArrayList<>();
+        list = service.getListAll();
+        //리스트가 비어있는지 확인
+        if(list.isEmpty()){
+            System.out.println("주소록이 비어있습니다.");
+            return;
+        }
+        // 리스트를 출력
+        for(TelDto dto : list){
+            System.out.println(dto);
+        }
+
+        // 스트림을 이용해서 출력
+//        list.forEach(x-> System.out.println(x));
     }
 
     public void searchByID() {

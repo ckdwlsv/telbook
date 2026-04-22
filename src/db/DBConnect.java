@@ -20,7 +20,7 @@ public class DBConnect {
                 String dbDriver = "com.mysql.cj.jdbc.Driver";
                 String dbUrl = "jdbc:mysql://localhost:3306/teldb";
                 String dbUser = "root";
-                String dbPassword = "1111";
+                String dbPassword = "1234";
                 // 드라이버 클래스를 메모리로 가져온다.
                 Class.forName(dbDriver);
                 //연결 생성
