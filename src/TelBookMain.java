@@ -41,9 +41,10 @@ public class TelBookMain {
                     userView.searchAll();
                     break;
                 case 5: //id로 1개 검색
-                    userView.searchByID();
+                    userView.searchOne();
                     break;
                 case 6:
+                    DBConnect.closeConnection();
                     System.out.println("시스템을 종료합니다.");
                     return;
             }
