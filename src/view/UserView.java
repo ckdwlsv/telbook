@@ -71,7 +71,12 @@ public class UserView {
     }
 
     public void delete() {
-        System.out.println("==전화 번호 삭제==");
+        System.out.println("삭제할 ID");
+        int id = sc.nextInt();
+        //서비스에 호출한 이후에 삭제 성공 유뮤를 리턴 받아서 부에서 출력(성공 : 1, 실패 : 0)
+        int result = service.delete(id);
+        System.out.println(result==1? "ID : "+ id+"삭제 완료" : "삭제 실패 : ID 확인하세요.");
+
     }
 
     public void searchAll() {
